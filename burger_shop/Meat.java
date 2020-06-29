@@ -1,5 +1,6 @@
 package burger_shop;
 
+
 public class Meat {
     public static final String BEEF = "beef";
     public static final String CHICKEN = "chicken";

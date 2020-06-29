@@ -2,6 +2,7 @@ package burger_shop;
 
 import java.util.ArrayList;
 
+
 public class HealthBurger extends Burger {
     
     HealthBurger() {

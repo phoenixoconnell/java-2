@@ -1,5 +1,6 @@
 package burger_shop;
 
+
 public class Side {
     public static final String FRIES = "french fries";
     public static final String SP_FRIES = "sweet potato fries";
