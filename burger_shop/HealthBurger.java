@@ -2,20 +2,19 @@ package burger_shop;
 
 import java.util.ArrayList;
 
-
 public class HealthBurger extends Burger {
-    
+
     HealthBurger() {
         super();
         this.maxToppings = 4;
     }
-    
-    HealthBurger(String protein, ArrayList<Toppings> toppings) {
-        super(protein, toppings);
+
+    HealthBurger(String bread, String protein, ArrayList<Toppings> toppings) {
+        super(bread, protein, toppings);
         this.maxToppings = 4;
         this.toppings.removeIf(t -> !t.isHealthy());
     }
-    
+
     @Override
     public void addTopping(Toppings topping) {
         if(topping.isHealthy()) {
