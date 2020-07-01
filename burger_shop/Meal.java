@@ -27,6 +27,8 @@ public class Meal {
         this.drink = Drink.COKE;
         this.burger = new Burger();
         this.sides = new ArrayList<>();
+
+        this.sides.add(Side.FRIES);
     }
 
     Meal(Drink drink, Burger burger, String side) {
@@ -37,6 +39,10 @@ public class Meal {
         this.sides.add(side);
     }
 
+    public static Meal meal() {
+        return new Meal();
+    }
+
     public Burger getBurger() {
         return this.burger;
     }
@@ -45,7 +51,24 @@ public class Meal {
         this.burger = burger;
     }
 
+    public void setDrink(Drink drink) {
+        this.drink = drink;
+    }
+
     public void addSide(String side) {
-        this.sides.add(side);
+        if(this.sides.size() < 3 && !this.sides.contains(side)) {
+            this.sides.add(side);
+        }
+    }
+
+    public double getMealPrice() {
+        double price = 0.0;
+        this.burger.calculateTotalPrice();
+
+        price += this.burger.getTotalPrice();
+
+        price += this.sides.stream().count() * Side.price;
+
+        return price;
     }
 }

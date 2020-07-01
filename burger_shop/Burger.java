@@ -3,7 +3,6 @@ package burger_shop;
 import java.util.ArrayList;
 
 public class Burger {
-    
     protected enum Toppings {
         LETTUCE(0.25, true), KETCHUP(0.05, false), MUSTARD(0.05, true), MAYO(0.05, false),
         BACON(1.25, false), CHEESE(0.99, false), TOMATO(0.25, true), ONION(0.25, true),
@@ -67,7 +66,11 @@ public class Burger {
     }
 
     public void addTopping(Toppings topping) {
-        if(this.toppings.size() < maxToppings) {
+        long count;
+
+        count = this.toppings.stream().filter(t -> t.name().equals(topping.name())).count();
+
+        if(this.toppings.size() < maxToppings && count < 2) {
             this.toppings.add(topping);
         } else System.out.println("Toppings maxed out!");
     }
