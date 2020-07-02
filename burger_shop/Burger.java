@@ -35,6 +35,7 @@ public class Burger {
     Burger() {
         this.maxToppings = 2;
         this.protein = Meat.BEEF;
+        this.bread = Bread.PLAIN;
         this.toppings = new ArrayList<>();
         this.basePrice = this.totalPrice = 2.99;
     }
@@ -63,6 +64,10 @@ public class Burger {
 
     public void setBread(String bread) {
         this.bread = bread;
+    }
+
+    public String getBread() {
+        return this.bread;
     }
 
     public void addTopping(Toppings topping) {

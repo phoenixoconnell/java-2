@@ -58,7 +58,19 @@ public class Meal {
     public void addSide(String side) {
         if(this.sides.size() < 3 && !this.sides.contains(side)) {
             this.sides.add(side);
+        } else System.out.println("Too many sides!");
+    }
+
+    public String getSidesString() {
+        String sideString = "";
+        for(String side: this.sides) {
+            sideString += side + " ";
         }
+        return sideString;
+    }
+
+    public String getDrinkString() {
+        return this.drink.getName();
     }
 
     public double getMealPrice() {
